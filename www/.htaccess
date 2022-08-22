@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Stop processing if already in the /public directory
+RewriteRule ^gl_php_mvc/public/ - [L]
+
+# Static resources if they exist
+RewriteCond %{DOCUMENT_ROOT}/gl_php_mvc/public/$1 -f
+RewriteRule (.+) $1 [L]
+
+# Route all other requests
+RewriteRule (.*) index.php?route=$1 [L,QSA]
+</IfModule>

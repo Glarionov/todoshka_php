@@ -1,0 +1,7 @@
+.editing .hide-on-edit {
+    display: none;
+}
+
+.not-editing .hide-on-not-edit {
+    display: none;
+}
